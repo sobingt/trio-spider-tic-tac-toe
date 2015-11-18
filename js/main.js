@@ -4,6 +4,15 @@ var tile = function(r,c){
   
 };
 
+var player = function(name, sign){
+  this.name = name;
+  this.sign = sign
+};
+var players =[];
+players[0]= new player('Surya','X');
+players[1]= new player('Darshan','0');
+var playerCounter=0;
+
 var board = function(){
   this.tiles =[];
   //create tic and toe tile array
@@ -24,6 +33,7 @@ var board = function(){
       rowDiv[i] = document.createElement('div');
       rowDiv[i].className = 'row';      
     }
+    //9 tiles
     for(var i = 0; i<this.tiles.length; i++)
     {
       var tileDiv = document.createElement('span');
@@ -32,7 +42,8 @@ var board = function(){
       tileDiv.setAttribute('data-row',this.tiles[i].row);
       tileDiv.setAttribute('data-col',this.tiles[i].col);
       tileDiv.addEventListener('click',function(){
-        console.log(this);
+        this.innerHTML = players[playerCounter].sign;
+        playerCounter= 1- playerCounter;
       });
       rowDiv[row].appendChild(tileDiv);
       if(i==2 || i==5 || i==8)
@@ -40,9 +51,9 @@ var board = function(){
     }    
     for(var i = 0; i<3; i++)
     {
-      document.body.appendChild(rowDiv[i]);
+      boardDiv.appendChild(rowDiv[i]);
     }
-    
+    document.body.appendChild(boardDiv);
     
     
   };

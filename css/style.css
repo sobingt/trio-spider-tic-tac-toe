@@ -1,7 +1,8 @@
 .tile{
-  background-color: red;
+  background-color: grey;
   margin: 5px;
   padding: 10px;
+  color: white;
 }
 .row{
   margin: 10px;
