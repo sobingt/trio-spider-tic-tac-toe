@@ -1,0 +1,10 @@
+.tile{
+  background-color: red;
+  margin: 5px;
+  padding: 10px;
+}
+.row{
+  margin: 10px;
+  display: block;
+  padding: 10px;
+}
